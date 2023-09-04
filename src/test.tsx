@@ -1,7 +1,7 @@
 import * as React from "react";
-import {Component,Fragment} from 'react';
-import {PDFReader} from "./components/PDFReader/index";
-import {MobilePDFReader} from "./components/MobilePDFReader/index";
+import { Component, Fragment } from 'react';
+import { PDFReader } from "./components/PDFReader/index";
+import { MobilePDFReader } from "./components/MobilePDFReader/index";
 //atob() is used to convert base64 encoded PDF to binary-like data.
 const pdfData = atob(
   'JVBERi0xLjcKCjEgMCBvYmogICUgZW50cnkgcG9pbnQKPDwKICAvVHlwZSAvQ2F0YWxvZwog' +
@@ -18,25 +18,25 @@ const pdfData = atob(
   'MDAwIG4gCjAwMDAwMDAzODAgMDAwMDAgbiAKdHJhaWxlcgo8PAogIC9TaXplIDYKICAvUm9v' +
   'dCAxIDAgUgo+PgpzdGFydHhyZWYKNDkyCiUlRU9G');
 
-export default class PDFTest extends Component{
+export default class PDFTest extends Component {
   state = {
-    page:1
+    page: 1
   }
-  private changePage=()=>{
+  private changePage = () => {
     const { page } = this.state;
     this.setState({
-      page:page+1
+      page: page + 1
     })
   }
-  private completeLoad(){
+  private completeLoad() {
 
   }
-  public render(){
+  public render() {
     const { page } = this.state;
     return <Fragment>
-              <div style={{height:600,overflow:'srcoll'}}>
-                <MobilePDFReader url={'/test.pdf'}/>
-              </div>
-          </Fragment>
+      <div style={{ height: "100%", overflow: 'srcoll' }}>
+        <MobilePDFReader url={'/test.pdf'} isShowHeader={false} isShowFooter={false} />
+      </div>
+    </Fragment>
   }
 }
