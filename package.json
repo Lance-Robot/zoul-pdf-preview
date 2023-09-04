@@ -1,6 +1,6 @@
 {
   "name": "zoul-pdf-preview",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "a mobile-friendly  PDF Reader in browser for React",
   "keywords": [
     "react",
